@@ -101,16 +101,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Column(
               children: <Widget>[
-                SizedBox(
-                  height: 50,
-                ),
                 Container(
                   width: 330,
                   child: RaisedButton(
                     child: Text('로그인'),
                     color: Colors.blue,
                     onPressed: () {
-                      
+
                     },
                   ),
                 ),
