@@ -139,6 +139,7 @@ class _signup extends State<SignupPage> {
                       Navigator.pop(context);
                     },
                   ),
+
                 ),
                 Spacer(flex: 2),
               ],

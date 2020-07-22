@@ -9,6 +9,7 @@ class _ChangePW extends State<ChangePwPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
+
         title: new Text('서강대 공지사항'),
         automaticallyImplyLeading: false, //뒤로가기 버튼 삭제
       ),
