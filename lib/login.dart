@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:sogang/main.dart";
 import "package:sogang/signup.dart";
+import "package:sogang/changpw.dart";
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/main': (context) => MainPage(),
         '/signup': (context) => SignupPage(),
-
+        '/changepw':(context) => ChangePwPage(),
       },
     );
   }
@@ -92,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   child: GestureDetector(
                     onTap: () {
+                      Navigator.of(context).pushNamed('/changepw');
                     },
                     child: Text(
                       "로그인이 안되세요?",

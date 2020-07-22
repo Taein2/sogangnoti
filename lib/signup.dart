@@ -111,7 +111,6 @@ class _signup extends State<SignupPage> {
                     }
                   }),
             ),
-
             SizedBox(
               height: 70,
             ),
