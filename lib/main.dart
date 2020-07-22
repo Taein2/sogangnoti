@@ -1,128 +1,66 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+class MainPage extends StatefulWidget {
+  _MainPage createState() => _MainPage();
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class _MainPage extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '서강대 공지사항',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Sogang Notification'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+    return new Scaffold(
       resizeToAvoidBottomPadding: false,
-      body: Center(
-        child: Column(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: <Widget>[
-            SizedBox(
-              height: 100,
-            ),
-            Text(
-              'Sogang Noti',
-              style: TextStyle(fontSize: 40.0),
-            ),
-            SizedBox(
-              height: 70,
-            ),
-            Container(
-              width: 330,
-              child: TextFormField(
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle)),
-                validator: (String value) {
-                  if (value.trim().isEmpty) {
-                    return 'ID is required';
-                  }
-                },
-              ),
-            ),
-            Container(
-              width: 330,
-              child: TextFormField(
-                obscureText: true,
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.vpn_key),
-                ),
-                validator: (String value) {
-                  if (value.trim().isEmpty) {
-                    return 'Password is required';
-                  }
-                },
-              ),
-            ),
-            Row(
-              children: <Widget>[
-                Spacer(flex: 2),
-                Container(
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      "로그인이 안되세요?",
-                      style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.blue),
-                    ),
-                  ),
-                ),
-                Spacer(flex: 8),
-                GestureDetector(
-                    onTap: () {},
-                    child: Text("회원가입",
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blue))),
-                Spacer(flex: 2)
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Column(
-              children: <Widget>[
-                Container(
-                  width: 330,
-                  child: RaisedButton(
-                    child: Text('로그인',
-                      style: TextStyle(
-                        fontSize:15.0,
-                        color: Colors.white,
+            // 드로워해더 추가
+            DrawerHeader(
+              child: Column(
+                children: <Widget>[
+                  Text('User ID 님 환영합니다'),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                              Icons.account_circle,
+                              size:50
+                          ),
+                          Text(''),
+                        ],
                       ),
-                    ),
-                    color: Colors.blue,
-                    onPressed: () {
-                    },
+                    )
                   ),
-                ),
-              ],
+                ],
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            // 리스트타일 추가
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                // 네이게이터 팝을 통해 드로워를 닫는다.
+                Navigator.pop(context);
+              },
+            ),
+            // 리스트타일 추가
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                // 드로워를 닫음
+                Navigator.pop(context);
+              },
             )
           ],
         ),
       ),
+      appBar: AppBar(
+        title: new Text('서강대 공지사항'),
+      ),
+      body: Center(),
     );
   }
 }
