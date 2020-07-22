@@ -99,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Spacer(flex: 2)
               ],
             ),
-
+            SizedBox(
+              height: 30,
+            ),
             Column(
               children: <Widget>[
                 Container(
