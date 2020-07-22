@@ -102,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 Spacer(flex: 8),
                 GestureDetector(
                     onTap: () {
+
                       Navigator.of(context).pushNamed('/signup');
                     },
                     child: Text("회원가입", style: TextStyle(color: Colors.blue))),
