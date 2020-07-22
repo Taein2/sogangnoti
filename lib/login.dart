@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:sogang/main.dart";
+import "package:sogang/signup.dart";
 
 void main() {
   runApp(MyApp());
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginPage(),
         '/main': (context) => MainPage(),
+        '/signup': (context) => SignupPage(),
+
       },
     );
   }
@@ -88,7 +91,8 @@ class _LoginPageState extends State<LoginPage> {
                 Spacer(flex: 2),
                 Container(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                    },
                     child: Text(
                       "로그인이 안되세요?",
                       style: TextStyle(color: Colors.blue),
@@ -97,7 +101,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Spacer(flex: 8),
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/signup');
+                    },
                     child: Text("회원가입", style: TextStyle(color: Colors.blue))),
                 Spacer(flex: 2)
               ],

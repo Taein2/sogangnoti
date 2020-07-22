@@ -10,57 +10,99 @@ class _MainPage extends State<MainPage> {
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+        child: Column(
           children: <Widget>[
-            // 드로워해더 추가
-            DrawerHeader(
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  // 드로워해더 추가
+                  DrawerHeader(
+                    child: Column(
+                      children: <Widget>[
+                        Text('User ID 님 환영합니다'),
+                        Expanded(
+                            child: Align(
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: <Widget>[
+                              Spacer(),
+                              Icon(Icons.account_circle, size: 50),
+                              Spacer(),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  FlatButton(
+                                      child: Text('마이페이지'),
+                                      onPressed: () {},
+                                      color: Colors.teal),
+                                ],
+                              ),
+                              Spacer(),
+                            ],
+                          ),
+                        )),
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  // 리스트타일 추가
+                  ListTile(
+                    title: Text('버전정보'),
+                    dense: true,
+                  ),
+                  ListTile(
+                    title: Text('ver 0.0.0'),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
               child: Column(
                 children: <Widget>[
-                  Text('User ID 님 환영합니다'),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: <Widget>[
-                          Icon(
-                              Icons.account_circle,
-                              size:50
-                          ),
-                          Text(''),
-                        ],
-                      ),
-                    )
+                  SizedBox(
+                    width: 270,
+                    child: RaisedButton(
+                      child: Text('로그 아웃'),
+                      onPressed: () {
+                        Navigator.popUntil(context,
+                            ModalRoute.withName(Navigator.defaultRouteName));
+                      },
+                    ),
                   ),
                 ],
               ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
             ),
-            // 리스트타일 추가
-            ListTile(
-              title: Text('Item 1'),
-              onTap: () {
-                // 네이게이터 팝을 통해 드로워를 닫는다.
-                Navigator.pop(context);
-              },
-            ),
-            // 리스트타일 추가
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                // 드로워를 닫음
-                Navigator.pop(context);
-              },
-            )
           ],
         ),
       ),
       appBar: AppBar(
         title: new Text('서강대 공지사항'),
       ),
-      body: Center(),
+      body: Column(children: <Widget>[
+        _buildTop(),
+        _buildMiddle(),
+        _buildBottom(),
+      ]),
     );
+  }
+
+  Widget _buildTop() {
+    return Column(
+      children: <Widget>[
+        
+      ],
+    );
+  }
+
+  Widget _buildMiddle() {
+    return Column();
+  }
+
+  Widget _buildBottom() {
+    return Column();
   }
 }
