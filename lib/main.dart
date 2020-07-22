@@ -82,27 +82,11 @@ class _MainPage extends State<MainPage> {
       appBar: AppBar(
         title: new Text('서강대 공지사항'),
       ),
-      body: Column(children: <Widget>[
-        _buildTop(),
-        _buildMiddle(),
-        _buildBottom(),
-      ]),
+      body: Column(
+        children: <Widget>[
+          
+        ],
+      ),
     );
-  }
-
-  Widget _buildTop() {
-    return Column(
-      children: <Widget>[
-        
-      ],
-    );
-  }
-
-  Widget _buildMiddle() {
-    return Column();
-  }
-
-  Widget _buildBottom() {
-    return Column();
   }
 }
