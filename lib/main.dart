@@ -99,13 +99,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 Spacer(flex: 2)
               ],
             ),
+            SizedBox(
+              height: 30,
+            ),
             Column(
               children: <Widget>[
                 Container(
                   width: 330,
                   child: RaisedButton(
-                    child: Text('로그인'),
+                    child: Text('로그인',
+                      style: TextStyle(
+                        fontSize:15.0,
+                        color: Colors.white,
+                      ),
+                    ),
                     color: Colors.blue,
+
                     onPressed: () {
 
                     },
