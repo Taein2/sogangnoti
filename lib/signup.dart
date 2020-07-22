@@ -95,7 +95,25 @@ class _signup extends State<SignupPage> {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 10,
+            ),
+            Container(
+              width: 330,
+              child: TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    hintText: '이메일 입력',
+                    prefixIcon: Icon(Icons.mail),
+                  ),
+                  validator: (String value) {
+                    if (value.trim().isEmpty) {
+                      return 'Password is required';
+                    }
+                  }),
+            ),
+
+            SizedBox(
+              height: 70,
             ),
             Row(
               children: <Widget>[
