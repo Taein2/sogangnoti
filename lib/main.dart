@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MainPage extends StatefulWidget {
   _MainPage createState() => _MainPage();
 }
@@ -14,48 +13,34 @@ class _MainPage extends State<MainPage> {
   bool _checked5 = false;
   String _userId = 'user ID';
 
-
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: () async => false,     //안드로이드 뒤로가기 방지
+      onWillPop: () async => false, //안드로이드 뒤로가기 방지
       child: new Scaffold(
         appBar: AppBar(
             title: new Text('서강대 공지사항 - 마이페이지'),
-            leading:
-            IconButton(         //왼쪽 상단 back button 직접 구현
+            leading: IconButton(
+              //왼쪽 상단 back button 직접 구현
               icon: Icon(Icons.arrow_back),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context);
               },
-            )
-        ),
-
+            )),
         resizeToAvoidBottomPadding: false,
         endDrawer: Drawer(
           child: Column(
             children: <Widget>[
-              DrawerHeader(
-                child: Column(
-                  children: <Widget>[
-                    Text(_userId + ' 님 환영합니다'),
-                    Spacer(),
-                    Row(
-                      children: <Widget>[
-                        Spacer(),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-
-                          ],
-                        ),
-                        Spacer(),
-                      ],
-                    ),
-                    Spacer(),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+              Container(
+                height: 120,
+                child: DrawerHeader(
+                  child: Row(
+                    children: <Widget>[
+                      Text(_userId + ' 님 환영합니다'),
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
                 ),
               ),
               // 리스트타일 추가
@@ -119,39 +104,53 @@ class _MainPage extends State<MainPage> {
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   children: <Widget>[
-                    SizedBox(
-                      width:270,
-                      child: RaisedButton(
-                          child: Text('마이페이지'),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/mypage');
-                          },
-                          color: Colors.teal
-                      ),
-                    ),
-                    SizedBox(
+                    Container(
                       width: 270,
-                      child: RaisedButton(
-                        child: Text('로그 아웃'),
-                        onPressed: () {
-                          Navigator.popUntil(context,
-                              ModalRoute.withName(Navigator.defaultRouteName));
-                        },
-                          color: Colors.teal
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: RaisedButton(
+                            child: Text(
+                              '마이페이지',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/mypage');
+                            },
+                            color: Colors.blue),
                       ),
                     ),
-
+                    Container(
+                      width: 270,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: RaisedButton(
+                            child: Text('로그 아웃',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.popUntil(
+                                  context,
+                                  ModalRoute.withName(
+                                      Navigator.defaultRouteName));
+                            },
+                            color: Colors.blue),
+                      ),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
         ),
-
         body: Column(
           children: <Widget>[
             //sliverappbar 내부구성
-
           ],
         ),
       ),

@@ -63,7 +63,10 @@ class _LoginPageState extends State<LoginPage> {
                 Spacer(flex: 4),
                 Text(
                   'Sogang Noti',
-                  style: TextStyle(fontSize: 40.0),
+                  style: TextStyle(fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+
                 ),
                 Spacer(flex: 4),
                 Container(
