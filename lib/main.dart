@@ -44,60 +44,50 @@ class _MainPage extends State<MainPage> {
                 ),
               ),
               // 리스트타일 추가
-              CheckboxListTile(
+              SwitchListTile(
                 title: Text('코로나19'),
-                controlAffinity: ListTileControlAffinity.platform,
                 value: _checked1,
                 onChanged: (bool value) {
                   setState(() {
                     _checked1 = value;
                   });
                 },
-                checkColor: Colors.black,
               ),
-              CheckboxListTile(
+              SwitchListTile(
                 title: Text('일반공지'),
-                controlAffinity: ListTileControlAffinity.trailing,
                 value: _checked2,
                 onChanged: (bool value) {
                   setState(() {
                     _checked2 = value;
                   });
                 },
-                checkColor: Colors.black,
               ),
-              CheckboxListTile(
+              SwitchListTile(
                 title: Text('학사공지'),
-                controlAffinity: ListTileControlAffinity.platform,
                 value: _checked3,
                 onChanged: (bool value) {
                   setState(() {
                     _checked3 = value;
                   });
                 },
-                checkColor: Colors.black,
               ),
-              CheckboxListTile(
+              SwitchListTile(
                 title: Text('장학공지'),
-                controlAffinity: ListTileControlAffinity.platform,
                 value: _checked4,
                 onChanged: (bool value) {
                   setState(() {
                     _checked4 = value;
                   });
                 },
-                checkColor: Colors.black,
               ),
-              CheckboxListTile(
+              SwitchListTile(
                 title: Text('행사특강'),
-                controlAffinity: ListTileControlAffinity.platform,
                 value: _checked5,
                 onChanged: (bool value) {
                   setState(() {
                     _checked5 = value;
                   });
                 },
-                checkColor: Colors.black,
               ),
               Spacer(flex: 1),
               Container(

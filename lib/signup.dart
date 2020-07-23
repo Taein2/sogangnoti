@@ -38,7 +38,7 @@ class _signup extends State<SignupPage> {
                 children: <Widget>[
                   Spacer(flex: 2),
                   Container(
-                    width: 200,
+                    width: 210,
                     child: TextFormField(
                         obscureText: true,
                         decoration: const InputDecoration(
@@ -53,20 +53,23 @@ class _signup extends State<SignupPage> {
                           }
                         }),
                   ),
-                  Spacer(flex: 2),
+                  Spacer(flex: 1),
                   Container(
                     width: 100,
                     height: 40,
-                    child: RaisedButton(
-                      child: Text(
-                        '중복체크',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: RaisedButton(
+                        child: Text(
+                          '중복체크',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          ),
                         ),
+                        color: Colors.blue,
+                        onPressed: () {},
                       ),
-                      color: Colors.blue,
-                      onPressed: () {},
                     ),
                   ),
                   Spacer(flex: 2),
@@ -191,36 +194,42 @@ class _signup extends State<SignupPage> {
                   Container(
                     width: 150,
                     height: 50,
-                    child: RaisedButton(
-                      child: Text(
-                        '가입',
-                        style: TextStyle(
-                          fontSize: 17.0,
-                          color: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: RaisedButton(
+                        child: Text(
+                          '가입',
+                          style: TextStyle(
+                            fontSize: 17.0,
+                            color: Colors.white,
+                          ),
                         ),
+                        color: Colors.blue,
+                        onPressed: () {
+                          Navigator.pop(context, '가입 완료!');
+                        },
                       ),
-                      color: Colors.blue,
-                      onPressed: () {
-                        Navigator.pop(context, '가입 완료!');
-                      },
                     ),
                   ),
                   Spacer(flex: 2),
                   Container(
                     width: 150,
                     height: 50,
-                    child: RaisedButton(
-                      child: Text(
-                        '취소',
-                        style: TextStyle(
-                          fontSize: 17.0,
-                          color: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: RaisedButton(
+                        child: Text(
+                          '취소',
+                          style: TextStyle(
+                            fontSize: 17.0,
+                            color: Colors.white,
+                          ),
                         ),
+                        color: Colors.blueGrey,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       ),
-                      color: Colors.blueGrey,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
                     ),
                   ),
                   Spacer(flex: 2),

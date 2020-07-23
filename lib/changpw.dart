@@ -61,68 +61,74 @@ class _ChangePW extends State<ChangePwPage> {
                   Container(
                     width: 150,
                     height: 50,
-                    child: RaisedButton(
-                      child: Text('찾기',
-                        style: TextStyle(
-                          fontSize: 17.0,
-                          color: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: RaisedButton(
+                        child: Text('찾기',
+                          style: TextStyle(
+                            fontSize: 17.0,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      color: Colors.blue,
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text('비밀번호 찾기 결과'),
-                                content: new Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text('임시 비밀번호를 이메일로 보냈습니다!'),
-                                    SizedBox(
-                                      height: 30,
-                                    ),
-                                    Center(
-                                      child: Container(
-                                        width: 100,
-                                        child: RaisedButton(
-                                            child: Text('처음으로',
-                                                style: TextStyle(
-                                                  fontSize: 17.0,
-                                                  color: Colors.white,
-                                                ),
-                                            ),
-                                            color: Colors.blue,
-                                            onPressed: () {
-                                              Navigator.popUntil(context,
-                                                  ModalRoute.withName(Navigator.defaultRouteName));
-                                            }),
+                        color: Colors.blue,
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('비밀번호 찾기 결과'),
+                                  content: new Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text('임시 비밀번호를 이메일로 보냈습니다!'),
+                                      SizedBox(
+                                        height: 30,
                                       ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            });
-                      },
+                                      Center(
+                                        child: Container(
+                                          width: 100,
+                                          child: RaisedButton(
+                                              child: Text('처음으로',
+                                                  style: TextStyle(
+                                                    fontSize: 17.0,
+                                                    color: Colors.white,
+                                                  ),
+                                              ),
+                                              color: Colors.blue,
+                                              onPressed: () {
+                                                Navigator.popUntil(context,
+                                                    ModalRoute.withName(Navigator.defaultRouteName));
+                                              }),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              });
+                        },
+                      ),
                     ),
                   ),
                   Spacer(flex: 1),
                   Container(
                     width: 150,
                     height: 50,
-                    child: RaisedButton(
-                      child:
-                      Text( '취소',
-                        style: TextStyle(
-                        fontSize: 17.0,
-                        color: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: RaisedButton(
+                        child:
+                        Text( '취소',
+                          style: TextStyle(
+                          fontSize: 17.0,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                      color: Colors.blueGrey,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+                        color: Colors.blueGrey,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                     ),
                   ),
                   Spacer(flex: 1),
