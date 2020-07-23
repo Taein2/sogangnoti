@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import "package:sogang/main.dart";
+import 'package:sogang/mypage.dart';
 import "package:sogang/signup.dart";
 import "package:sogang/changpw.dart";
 
 void main() {
   runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/main': (context) => MainPage(),
         '/signup': (context) => SignupPage(),
         '/changepw':(context) => ChangePwPage(),
+        '/mypage':(context) => Mypage(),
       },
     );
   }
@@ -49,16 +52,12 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: 100,
-            ),
+            Spacer(flex:4),
             Text(
               'Sogang Noti',
               style: TextStyle(fontSize: 40.0),
             ),
-            SizedBox(
-              height: 70,
-            ),
+            Spacer(flex:4),
             Container(
               width: 330,
               child: TextFormField(
@@ -85,9 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            Spacer(flex:1),
             Row(
               children: <Widget>[
                 Spacer(flex: 2),
@@ -112,9 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                 Spacer(flex: 2)
               ],
             ),
-            SizedBox(
-              height: 70,
-            ),
+            Spacer(flex:6),
             Column(
               children: <Widget>[
                 Container(
@@ -137,8 +132,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
+
               ],
-            )
+            ),
+            Spacer(flex:5),
           ],
         ),
       ),

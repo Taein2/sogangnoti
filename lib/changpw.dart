@@ -66,18 +66,21 @@ class _ChangePW extends State<ChangePwPage> {
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text('비밀번호를 이메일로 보냈습니다!'),
+                                  Text('임시 비밀번호를 이메일로 보냈습니다!'),
                                   SizedBox(
                                     height: 30,
                                   ),
                                   Center(
-                                    child: RaisedButton(
-                                        child: Text('닫기'),
-                                        color: Colors.blue,
-                                        onPressed: () {
-                                          Navigator.popUntil(context,
-                                              ModalRoute.withName(Navigator.defaultRouteName));
-                                        }),
+                                    child: Container(
+                                      width: 100,
+                                      child: RaisedButton(
+                                          child: Text('닫기'),
+                                          color: Colors.blue,
+                                          onPressed: () {
+                                            Navigator.popUntil(context,
+                                                ModalRoute.withName(Navigator.defaultRouteName));
+                                          }),
+                                    ),
                                   )
                                 ],
                               ),

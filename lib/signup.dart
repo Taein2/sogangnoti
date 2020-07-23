@@ -17,9 +17,7 @@ class _signup extends State<SignupPage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: 80,
-            ),
+            Spacer(flex:8),
             Text(
               '회원 가입',
               style: TextStyle(
@@ -27,9 +25,7 @@ class _signup extends State<SignupPage> {
                 fontSize: 30,
               ),
             ),
-            SizedBox(
-              height: 60,
-            ),
+            Spacer(flex:8),
             Row(
               children: <Widget>[
                 Spacer(flex: 2),
@@ -59,9 +55,7 @@ class _signup extends State<SignupPage> {
                 Spacer(flex: 2),
               ],
             ),
-            SizedBox(
-              height: 10,
-            ),
+            Spacer(flex:1),
             Container(
               width: 330,
               child: TextFormField(
@@ -76,9 +70,7 @@ class _signup extends State<SignupPage> {
                     }
                   }),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            Spacer(flex:1),
             Container(
               width: 330,
               child: TextFormField(
@@ -94,9 +86,7 @@ class _signup extends State<SignupPage> {
                   },
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            Spacer(flex:1),
             Container(
               width: 330,
               child: TextFormField(
@@ -111,9 +101,7 @@ class _signup extends State<SignupPage> {
                     }
                   }),
             ),
-            SizedBox(
-              height: 70,
-            ),
+            Spacer(flex:8),
             Row(
               children: <Widget>[
                 Spacer(flex: 2),
@@ -139,11 +127,11 @@ class _signup extends State<SignupPage> {
                       Navigator.pop(context);
                     },
                   ),
-
                 ),
                 Spacer(flex: 2),
               ],
             ),
+            Spacer(flex:12),
           ],
         ),
       ),
