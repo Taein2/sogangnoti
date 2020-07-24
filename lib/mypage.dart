@@ -12,18 +12,17 @@ class _mypage extends State<Mypage> {
 
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: () async => false,     //안드로이드 뒤로가기 방지
+      onWillPop: () async => false, //안드로이드 뒤로가기 방지
       child: new Scaffold(
         appBar: AppBar(
-          title: new Text('서강대 공지사항 - 마이페이지'),
-          leading:
-            IconButton(         //왼쪽 상단 back button 직접 구현
+            title: new Text('서강대 공지사항 - 마이페이지'),
+            leading: IconButton(
+              //왼쪽 상단 back button 직접 구현
               icon: Icon(Icons.arrow_back),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context);
               },
-            )
-        ),
+            )),
         resizeToAvoidBottomPadding: false,
         body: Padding(
           padding: const EdgeInsets.all(30.0),
@@ -60,15 +59,25 @@ class _mypage extends State<Mypage> {
                     ),
                   ),
                 ),
-                Spacer(flex: 1),
+                Spacer(flex: 4),
                 Container(
                   width: 380,
+                  height: 50,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: RaisedButton(
-                      child: Text('비밀번호 변경'),
+                      child: Text(
+                        '비밀번호 변경',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white),
+                      ),
                       color: Colors.blue,
-                      onPressed: () {},
+                      onPressed: () {
+
+                        Navigator.of(context).pushNamed('/mypagechangepw');
+                      },
                     ),
                   ),
                 ),
@@ -82,8 +91,20 @@ class _mypage extends State<Mypage> {
                 ),
                 Spacer(flex: 5),
                 Text(''),
+                Container(
+                    width: 330,
+                    height: 130,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.blueAccent),
+
+                    ),
+                    child: SingleChildScrollView(
+
+                      child: Text('키워드 추가할 부분'),
+                    ),
+                ),
                 // List 추가 , #해시태그 가로 표시 ex) #안녕 #학사 #공지
-                Spacer(flex: 10),
+                Spacer(flex: 3),
 
                 Padding(
                   padding: const EdgeInsets.all(15.0),

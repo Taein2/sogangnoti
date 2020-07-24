@@ -18,7 +18,7 @@ class _MainPage extends State<MainPage> {
       onWillPop: () async => false, //안드로이드 뒤로가기 방지
       child: new Scaffold(
         appBar: AppBar(
-            title: new Text('서강대 공지사항 - 마이페이지'),
+            title: new Text('서강대 공지사항'),
             leading: IconButton(
               //왼쪽 상단 back button 직접 구현
               icon: Icon(Icons.arrow_back),
@@ -35,7 +35,13 @@ class _MainPage extends State<MainPage> {
                 child: DrawerHeader(
                   child: Row(
                     children: <Widget>[
-                      Text(_userId + ' 님 환영합니다'),
+                      Text(
+                        _userId + ' 님 환영합니다',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
                     ],
                   ),
                   decoration: BoxDecoration(
@@ -45,7 +51,13 @@ class _MainPage extends State<MainPage> {
               ),
               // 리스트타일 추가
               SwitchListTile(
-                title: Text('코로나19'),
+                title: Text(
+                  '코로나19',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
                 value: _checked1,
                 onChanged: (bool value) {
                   setState(() {
@@ -54,7 +66,13 @@ class _MainPage extends State<MainPage> {
                 },
               ),
               SwitchListTile(
-                title: Text('일반공지'),
+                title: Text(
+                  '일반공지',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
                 value: _checked2,
                 onChanged: (bool value) {
                   setState(() {
@@ -63,7 +81,13 @@ class _MainPage extends State<MainPage> {
                 },
               ),
               SwitchListTile(
-                title: Text('학사공지'),
+                title: Text(
+                  '학사공지',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
                 value: _checked3,
                 onChanged: (bool value) {
                   setState(() {
@@ -72,7 +96,13 @@ class _MainPage extends State<MainPage> {
                 },
               ),
               SwitchListTile(
-                title: Text('장학공지'),
+                title: Text(
+                  '장학공지',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
                 value: _checked4,
                 onChanged: (bool value) {
                   setState(() {
@@ -81,7 +111,13 @@ class _MainPage extends State<MainPage> {
                 },
               ),
               SwitchListTile(
-                title: Text('행사특강'),
+                title: Text(
+                  '행사특강',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
                 value: _checked5,
                 onChanged: (bool value) {
                   setState(() {
@@ -102,7 +138,7 @@ class _MainPage extends State<MainPage> {
                             child: Text(
                               '마이페이지',
                               style: TextStyle(
-                                fontSize: 15.0,
+                                fontSize: 18.0,
                                 color: Colors.white,
                               ),
                             ),
@@ -117,9 +153,10 @@ class _MainPage extends State<MainPage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(30),
                         child: RaisedButton(
-                            child: Text('로그 아웃',
+                            child: Text(
+                              '로그 아웃',
                               style: TextStyle(
-                                fontSize: 15.0,
+                                fontSize: 18.0,
                                 color: Colors.white,
                               ),
                             ),
@@ -138,10 +175,26 @@ class _MainPage extends State<MainPage> {
             ],
           ),
         ),
-        body: Column(
-          children: <Widget>[
-            //sliverappbar 내부구성
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Spacer(flex: 1),
+              Text(
+                '공지 사항',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                ),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed('/sub');
+                },
+              ),
+              Spacer(flex:1),
+
           ],
+          ),
         ),
       ),
     );

@@ -5,6 +5,9 @@ import "package:sogang/main.dart";
 import 'package:sogang/mypage.dart';
 import "package:sogang/signup.dart";
 import "package:sogang/changpw.dart";
+import "package:sogang/main_sub.dart";
+import "package:sogang/mypage_changpw.dart";
+
 //import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
@@ -27,6 +30,8 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => SignupPage(),
         '/changepw': (context) => ChangePwPage(),
         '/mypage': (context) => Mypage(),
+        '/sub' : (context) => SubPage(),
+        '/mypagechangepw' : (context) => MyPageChangePwPage(),
       },
     );
   }

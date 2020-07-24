@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 
-class ChangePwPage extends StatefulWidget {
-  _ChangePW createState() => _ChangePW();
+class MyPageChangePwPage extends StatefulWidget {
+  _myPChangePW createState() => _myPChangePW();
 }
 
-class _ChangePW extends State<ChangePwPage> {
+class _myPChangePW extends State<MyPageChangePwPage> {
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: () async => false,     //안드로이드 뒤로가기 방지
+      onWillPop: () async => false, //안드로이드 뒤로가기 방지
       child: new Scaffold(
         appBar: AppBar(
-            title: new Text('서강대 공지사항'),
-            leading:
-            IconButton(         //왼쪽 상단 back button 직접 구현
+            title: new Text('서강대 공지사항-비밀번호 변경'),
+            leading: IconButton(
+              //왼쪽 상단 back button 직접 구현
               icon: Icon(Icons.arrow_back),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context);
               },
-            )
-        ),
+            )),
         resizeToAvoidBottomPadding: false,
         body: Center(
           child: Column(
             children: <Widget>[
               Spacer(flex: 6),
               Text(
-                '비밀번호 찾기',
+                '비밀번호 변경',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 40.0,
@@ -36,24 +35,54 @@ class _ChangePW extends State<ChangePwPage> {
               Container(
                 width: 330,
                 child: TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: 'Email',
-                      contentPadding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
-                      prefixIcon: Icon(Icons.mail, size:35),
-                    ),
-                    validator: (String value) {
-                      if (value.trim().isEmpty) {
-                        return 'Email is required';
-                      }
-                    }),
-              ),
-              Spacer(flex: 1),
-              Text(
-                '가입시 입력한 이메일 주소를 입력하세요',
-                style: TextStyle(
-                  fontSize: 16,
+                  decoration: const InputDecoration(
+                    hintText: '현재 비밀번호',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
+                    prefixIcon: Icon(Icons.vpn_key, size: 35),
+                  ),
+                  validator: (String value) {
+                    if (value.trim().isEmpty) {
+                      return 'Email is required';
+                    }
+                  },
                 ),
               ),
+              Spacer(flex: 1),
+              Container(
+                width: 330,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: '새로운 비밀번호',
+                    contentPadding:
+                    EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
+                    prefixIcon: Icon(Icons.vpn_key, size: 35),
+                  ),
+                  validator: (String value) {
+                    if (value.trim().isEmpty) {
+                      return 'Email is required';
+                    }
+                  },
+                ),
+              ),
+              Spacer(flex: 1),
+              Container(
+                width: 330,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: '비밀번호 확인',
+                    contentPadding:
+                    EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
+                    prefixIcon: Icon(Icons.vpn_key, size: 35),
+                  ),
+                  validator: (String value) {
+                    if (value.trim().isEmpty) {
+                      return 'Email is required';
+                    }
+                  },
+                ),
+              ),
+
               Spacer(flex: 7),
               Row(
                 children: <Widget>[
@@ -64,7 +93,8 @@ class _ChangePW extends State<ChangePwPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: RaisedButton(
-                        child: Text('찾기',
+                        child: Text(
+                          '변경',
                           style: TextStyle(
                             fontSize: 17.0,
                             color: Colors.white,
@@ -76,12 +106,13 @@ class _ChangePW extends State<ChangePwPage> {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('비밀번호 찾기 결과'),
+                                  title: Text('비밀번호 변경 결과'),
                                   content: new Column(
                                     mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      Text('임시 비밀번호를 이메일로 보냈습니다!'),
+                                      Text('변경에 성공하였습니다!'),
                                       SizedBox(
                                         height: 30,
                                       ),
@@ -89,16 +120,17 @@ class _ChangePW extends State<ChangePwPage> {
                                         child: Container(
                                           width: 100,
                                           child: RaisedButton(
-                                              child: Text('처음으로',
-                                                  style: TextStyle(
-                                                    fontSize: 17.0,
-                                                    color: Colors.white,
-                                                  ),
+                                              child: Text(
+                                                '닫기',
+                                                style: TextStyle(
+                                                  fontSize: 17.0,
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                               color: Colors.blue,
                                               onPressed: () {
-                                                Navigator.popUntil(context,
-                                                    ModalRoute.withName(Navigator.defaultRouteName));
+                                                Navigator.pop(context);
+                                                Navigator.pop(context);
                                               }),
                                         ),
                                       )
@@ -117,13 +149,13 @@ class _ChangePW extends State<ChangePwPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: RaisedButton(
-                        child:
-                        Text( '취소',
+                        child: Text(
+                          '취소',
                           style: TextStyle(
-                          fontSize: 17.0,
-                          color: Colors.white,
+                            fontSize: 17.0,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
                         color: Colors.blueGrey,
                         onPressed: () {
                           Navigator.pop(context);
