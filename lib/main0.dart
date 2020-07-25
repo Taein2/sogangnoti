@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 
-class MainPage extends StatefulWidget {
-  _MainPage createState() => _MainPage();
+class MainPage0 extends StatefulWidget {
+  _MainPage0 createState() => _MainPage0();
 }
 
-class _MainPage extends State<MainPage> {
+class _MainPage0 extends State<MainPage0> {
   @override
   bool _checked1 = false;
   bool _checked2 = false;
@@ -17,16 +18,10 @@ class _MainPage extends State<MainPage> {
     return new WillPopScope(
       onWillPop: () async => false, //안드로이드 뒤로가기 방지
       child: new Scaffold(
-
         appBar: AppBar(
             title: new Text('서강대 공지사항'),
-            leading: IconButton(
-              //왼쪽 상단 back button 직접 구현
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            )),
+            automaticallyImplyLeading: false,           //뒤로가기 버튼 삭제
+            ),
         resizeToAvoidBottomPadding: false,
         endDrawer: Drawer(
           child: Column(
@@ -137,15 +132,16 @@ class _MainPage extends State<MainPage> {
                         borderRadius: BorderRadius.circular(30),
                         child: RaisedButton(
                             child: Text(
-                              '마이페이지',
+                              '비밀번호변경',
                               style: TextStyle(
                                 fontSize: 18.0,
                                 color: Colors.white,
                               ),
                             ),
                             onPressed: () {
-                              Navigator.of(context).pushNamed('/mypage');
-                              },
+                              FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
+                              Navigator.of(context).pushNamed('/changepw');
+                            },
                             color: Colors.blue),
                       ),
                     ),
@@ -162,10 +158,8 @@ class _MainPage extends State<MainPage> {
                               ),
                             ),
                             onPressed: () {
-                              Navigator.popUntil(
-                                  context,
-                                  ModalRoute.withName(
-                                      Navigator.defaultRouteName));
+                              FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
+                              Navigator.popUntil(context,ModalRoute.withName(Navigator.defaultRouteName));
                             },
                             color: Colors.blue),
                       ),
@@ -194,7 +188,7 @@ class _MainPage extends State<MainPage> {
               ),
               Spacer(flex:1),
 
-          ],
+            ],
           ),
         ),
       ),

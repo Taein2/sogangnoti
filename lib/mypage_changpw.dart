@@ -16,6 +16,7 @@ class _myPChangePW extends State<MyPageChangePwPage> {
               //왼쪽 상단 back button 직접 구현
               icon: Icon(Icons.arrow_back),
               onPressed: () {
+                FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
                 Navigator.pop(context);
               },
             )),
@@ -129,7 +130,9 @@ class _myPChangePW extends State<MyPageChangePwPage> {
                                               ),
                                               color: Colors.blue,
                                               onPressed: () {
+                                                FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
                                                 Navigator.pop(context);
+                                                FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
                                                 Navigator.pop(context);
                                               }),
                                         ),
@@ -158,6 +161,7 @@ class _myPChangePW extends State<MyPageChangePwPage> {
                         ),
                         color: Colors.blueGrey,
                         onPressed: () {
+                          FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
                           Navigator.pop(context);
                         },
                       ),

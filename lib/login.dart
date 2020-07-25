@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import "package:sogang/main.dart";
+import "package:sogang/main0.dart";
 import 'package:sogang/mypage.dart';
 import "package:sogang/signup.dart";
 import "package:sogang/changpw.dart";
@@ -25,13 +26,14 @@ class MyApp extends StatelessWidget {
       //페이지 연결 라우팅 형식
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
-        '/main': (context) => MainPage(),
-        '/signup': (context) => SignupPage(),
-        '/changepw': (context) => ChangePwPage(),
-        '/mypage': (context) => Mypage(),
-        '/sub' : (context) => SubPage(),
-        '/mypagechangepw' : (context) => MyPageChangePwPage(),
+        '/': (context) => new LoginPage(),
+        '/main0': (context) => new MainPage0(),
+        '/main': (context) => new MainPage(),
+        '/signup': (context) => new SignupPage(),
+        '/changepw': (context) => new ChangePwPage(),
+        '/mypage': (context) => new Mypage(),
+        '/sub' : (context) => new SubPage(),
+        '/mypagechangepw' : (context) => new MyPageChangePwPage(),
       },
     );
   }
@@ -115,6 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                     Container(
                       child: GestureDetector(
                         onTap: () {
+                          FocusManager.instance.primaryFocus.unfocus();
                           Navigator.of(context).pushNamed('/changepw');
                         },
                         child: Text(
@@ -126,6 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                     Spacer(flex: 8),
                     GestureDetector(
                         onTap: () {
+                          FocusManager.instance.primaryFocus.unfocus();
                           Navigator.of(context).pushNamed('/signup');
                         },
                         child: Text("회원가입",
@@ -155,7 +159,8 @@ class _LoginPageState extends State<LoginPage> {
                             _controlID.text="";
                             _controlPW.text="";
 
-                            Navigator.of(context).pushNamed('/main');
+                            FocusManager.instance.primaryFocus.unfocus();   //백 버튼으로 돌아갈 시 포커스 해제
+                            Navigator.of(context).pushNamed('/main0');
 
                           },
                         ),
